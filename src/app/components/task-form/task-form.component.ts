@@ -19,8 +19,13 @@ export class TaskFormComponent implements OnInit {
 
 		this.taskService.addTasks({
 			title: title.value,
-			description: description.value
+			description: description.value,
+			hide: true
 		});
+
+		title.value = '';
+		description.value = '';
+		title.focus();
 
 		return false;
 	}
